@@ -1,0 +1,78 @@
+/* styles.css */
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(247, 114, 194);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.gif-container {
+    width: 80%; /* Adjust this to control the GIF size on mobile */
+    margin-bottom: 20px; /* Adds some space between the GIF and the buttons */
+    max-width: 500px; /* Maximum width on larger screens */
+}
+
+.responsive-gif {
+    width: 100%; /* Make the GIF responsive to the container size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.buttons-container {
+    width: 100%; /* Full width to center buttons within it */
+    position: fixed;
+    bottom: 10px; /* Distance from the bottom of the screen */
+    text-align: center;
+}
+
+button {
+    margin: 0 5px; /* Spacing between buttons */
+    padding: 10px 20px; /* Size of the buttons */
+    font-size: 1em; /* Size of the text inside buttons */
+    cursor: pointer; /* Cursor style when hovering over the buttons */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+/* Additional styles for buttons to make them visually appealing */
+button#yes-button {
+    background-color: #4CAF50; /* Green background for 'Yes' */
+    color: white; /* White text */
+}
+
+button#no-button {
+    background-color: #f44336; /* Red background for 'No' */
+    color: white; /* White text */
+}
+
+
+.text-container {
+    margin: 0 auto; /* Centers the container */
+    max-width: 600px; /* Maximum width of the text container */
+    padding: 0 20px; /* Padding on the sides */
+    text-align: center; /* Centers the text */
+}
+
+.text-container h2 {
+    line-height: 1.5; /* Spacing between lines for readability */
+    margin-bottom: 0px; /* Spacing between paragraphs */
+    color: #2c2b2b; /* Text color, can be adjusted */
+}
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .gif-container {
+        width: 90%; /* Allows the GIF to take more width on smaller screens */
+    }
+
+    button {
+        font-size: 0.9em; /* Slightly smaller text on small screens */
+        padding: 8px 16px; /* Slightly smaller buttons on small screens */
+    }
+}
