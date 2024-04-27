@@ -23,20 +23,26 @@ html, body {
 }
 
 .buttons-container {
-    width: 100%; /* Full width to center buttons within it */
-    position: fixed;
-    bottom: 10px; /* Distance from the bottom of the screen */
+    position: relative; /* Fixed positioning to place the buttons relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
     text-align: center;
+    z-index: 10; /* Ensure the container is above other elements */
 }
-
-button {
-    margin: 0 5px; /* Spacing between buttons */
+.button {
     padding: 10px 20px; /* Size of the buttons */
     font-size: 1em; /* Size of the text inside buttons */
     cursor: pointer; /* Cursor style when hovering over the buttons */
     border: none; /* Removes default border */
     border-radius: 5px; /* Rounded corners for buttons */
+    position: absolute; /* Allows the button to be placed anywhere within the container */
+    transition: all 0.5s ease; /* Smooth transition for movement and style changes */
 }
+
+/* Additional styles for buttons to make them visually appealing */
+
 
 /* Additional styles for buttons to make them visually appealing */
 button#yes-button {
@@ -47,6 +53,19 @@ button#yes-button {
 button#no-button {
     background-color: #f44336; /* Red background for 'No' */
     color: white; /* White text */
+   
+}
+
+
+#yes-button {
+    /* ... other styles ... */
+    position: relative; 
+    margin-right: 20px
+}
+
+#no-button {
+    /* ... other styles ... */
+    position: absolute;  
 }
 
 

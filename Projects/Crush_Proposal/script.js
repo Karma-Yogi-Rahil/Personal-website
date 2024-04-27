@@ -11,8 +11,13 @@ function navigateNo() {
         window.location.href = 'no3.html';
 
     }else if (window.location.href.endsWith('yes.html')) {
-        updateContent('https://media.tenor.com/Gr8vwEb9h1cAAAAi/mochi-mochi-peach-cat-gif-mochi-cat.gif',"No point in deying now")
+        updateContent('https://media.tenor.com/Gr8vwEb9h1cAAAAi/mochi-mochi-peach-cat-gif-mochi-cat.gif',"No point in denying now")
     }
+    else if (window.location.href.endsWith('no3.html')) {
+        updateContent('https://media.tenor.com/dNLReRVOU4sAAAAi/mochi-mochi-peach-cat-crying.gif',"Rah Dekhenge Teri Chahe Zamane Lag Jaaye, Ya Tu Aa Jaaye, Ya Hum Hi Thikane Lag Jaaye")
+        randomizePosition()
+    }
+   
 
     
     else {
@@ -34,19 +39,27 @@ function updateContent(newImageUrl, newText) {
 
 
 function randomizePosition() {
-    // Get the "No" button and its container
     var noButton = document.getElementById('no-button');
-    var container = document.getElementById('buttonsContainer');
 
-    // Calculate maximum available positions within the container
-    var maxHeight = container.clientHeight - noButton.clientHeight;
-    var maxWidth = container.clientWidth - noButton.clientWidth;
+    // Use the viewport height and width minus the height and width of the button for positioning
+    var maxHeight = window.innerHeight - noButton.offsetHeight;
+    var maxWidth = window.innerWidth - noButton.offsetWidth;
 
-    // Generate random top and left positions
-    var randomTop = Math.floor(Math.random() * maxHeight);
-    var randomLeft = Math.floor(Math.random() * maxWidth);
+    // Generate random top and left positions within the viewport
+    var randomTop = Math.floor(Math.random() * (maxHeight + 1)); // +1 to include the edge case
+    var randomLeft = Math.floor(Math.random() * (maxWidth + 1)); // +1 to include the edge case
 
-    // Set the "No" button's position
+    // Check if the button would go off-screen and adjust if necessary
+    if (randomTop < 0) randomTop = 0;
+    if (randomLeft < 0) randomLeft = 0;
+
+    // Set the "No" button's position to be random within the visible viewport
     noButton.style.top = randomTop + 'px';
     noButton.style.left = randomLeft + 'px';
 }
+
+
+
+
+
+
